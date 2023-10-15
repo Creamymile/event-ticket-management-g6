@@ -13,7 +13,7 @@ import {
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../redux/actions/user";
-import { color } from "@chakra-ui/react";
+import { Button, color } from "@chakra-ui/react";
 
 function MyNavbar(props) {
   const handleLogout = () => {
@@ -35,7 +35,7 @@ function MyNavbar(props) {
             <NavbarBrand style={{ marginLeft: 30 }}>
               {" "}
               <Link style={{ textDecoration: "none", color: "black" }} to="/">
-                DoDooS Event
+                BRANGKAS
               </Link>
             </NavbarBrand>
             <Nav>
@@ -124,18 +124,9 @@ function MyNavbar(props) {
           </div>
           {props.userGlobal.username ? (
             <Link to="/" style={{ textDecoration: "none" }}>
-              <button
-                style={{
-                  backgroundColor: "red",
-                  color: "white",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                }}
-                onClick={handleLogout}
-              >
+              <Button colorScheme="red" onClick={handleLogout}>
                 Log Out
-              </button>
+              </Button>
             </Link>
           ) : null}
         </div>
